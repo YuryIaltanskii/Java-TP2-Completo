@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="/css/bootstrap.min.css"></link>
+	<script src="/js/jquery-3.2.1.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/popper-utils.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<title>PostUser</title>
+</h:head>
+
+<h:body>
+<f:view>
+    <h:form>
+        <h1>Posts</h1>
+ 		<h:link outcome="createPost" value="Crear un nuevo post" />
+ 		<ul>
+	 		<ui:repeat value="#{postMb.all()}" var="post">
+	            <li>
+	            	#{post.title}, #{post.content}
+	            </li>
+	        </ui:repeat>
+ 		</ul>
+        
+    </h:form>
+</f:view>
+</h:body>
+</html>

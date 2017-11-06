@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html  
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="/css/bootstrap.min.css"></link>
+	<script src="/js/jquery-3.2.1.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/popper-utils.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<title>PostUser</title>
+</h:head>
+<h:body>
+<div class="container-fluid">
+	<h:form>
+				<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+					<h:link class="navbar-brand" value="Entrar " outcome="login" rendered="#{authUserMb.logged}" />
+					<h:link class="navbar-brand" value="Registrarse" outcome="createUser"  rendered="#{not authUserMb.logged}"/>
+					<h:commandLink class="navbar-brand" value="Salir" action="#{authUserMb.logout()}"   rendered="#{not authUserMb.logged}"/>
+				</nav>
+		</h:form>
+	<h1>Entrar a PostUser</h1>
+	<div class="col-md-3">
+		<h:form class="form-signin">
+			<h2 class="form-signin-heading">Ingrese</h2>
+			<div>
+				<label for="inputUser" class="sr-only">Usuario</label>
+				<h:inputText value="#{authUserMb.username}" class="form-control"/>
+			</div>
+			<div>
+				<label for="inputPassword" class="sr-only">Password</label>
+				<h:inputSecret value="#{authUserMb.password}"   class="form-control"/>
+			</div>
+			<h:commandButton class="btn btn-md btn-primary btn-block" action="#{authUserMb.loggin()}" >
+			</h:commandButton>
+		</h:form>
+	</div>
+</div> <!-- /container -->
+</h:body>
+</html>

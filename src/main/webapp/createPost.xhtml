@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html  
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="/css/bootstrap.min.css"></link>
+	<script src="/js/jquery-3.2.1.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/popper-utils.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<title>PostUser</title>
+</h:head>
+<h:body>
+
+<div class="container-fluid">
+	<h:form>
+				<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+					<h:link outcome="index" value="Volver"></h:link>
+				</nav>
+		</h:form>
+	<h1>Nuevo Post</h1>
+	<div class="col-md-3">
+		<h:form class="form-signin">
+			<div class="register-box-body">
+				<div>
+					<label for="inputTitle" class="sr-only">Titulo</label>
+					<h:inputText value="#{postMb.post.title}" id="title" label="Titulo" styleClass="form-control" />
+					<h:message for="title" />
+				</div>
+				<div>
+					<label for="inputPassword" class="sr-only">Contenido</label>
+					<h:inputText value="#{postMb.post.content}" id="content" label="Contenido"  styleClass="form-control"/>
+					<h:message for="content" />
+				</div>
+				<h:commandButton class="btn btn-md btn-primary btn-block" action="#{postMb.create}" value="Crear Post" >
+				</h:commandButton>
+			</div>
+		</h:form>
+	</div>
+</div> <!-- /container -->
+</h:body>
+</html>
